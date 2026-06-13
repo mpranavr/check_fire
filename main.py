@@ -8,25 +8,24 @@ URL = "https://tasadmin.iitkgp.ac.in/api/v1/swimming-form/getReleasedFormList"
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
-print("BOT_TOKEN =", BOT_TOKEN)
-print("CHAT_ID =", CHAT_ID)
-
 CHECK_INTERVAL = 300  # seconds
 
 
 def send_telegram(message):
-    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
+    if not BOT_TOKEN or not CHAT_ID:
+        return
 
-    r = requests.get(
-        url,
-        params={
-            "chat_id": CHAT_ID,
-            "text": message
-        }
-    )
-
-    print("Telegram Status:", r.status_code)
-    print("Telegram Response:", r.text)
+    try:
+        requests.get(
+            f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
+            params={
+                "chat_id": CHAT_ID,
+                "text": message
+            },
+            timeout=10
+        )
+    except Exception as e:
+        print("Telegram Error:", e)
 
 
 def get_pgrs_data():
