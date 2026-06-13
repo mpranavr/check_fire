@@ -1,0 +1,8 @@
+services:
+  - type: worker
+    name: pgrs-swimming-monitor
+    runtime: python
+
+    buildCommand: pip install -r requirements.txt
+
+    startCommand: python monitor.py
