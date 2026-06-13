@@ -8,7 +8,7 @@ URL = "https://tasadmin.iitkgp.ac.in/api/v1/swimming-form/getReleasedFormList"
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
-CHECK_INTERVAL = 30  # seconds
+CHECK_INTERVAL = 300  # seconds
 
 
 def send_telegram(message):
