@@ -8,6 +8,9 @@ URL = "https://tasadmin.iitkgp.ac.in/api/v1/swimming-form/getReleasedFormList"
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
+print("BOT_TOKEN =", BOT_TOKEN)
+print("CHAT_ID =", CHAT_ID)
+
 CHECK_INTERVAL = 300  # seconds
 
 
