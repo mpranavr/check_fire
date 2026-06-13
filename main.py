@@ -12,20 +12,18 @@ CHECK_INTERVAL = 300  # seconds
 
 
 def send_telegram(message):
-    if not BOT_TOKEN or not CHAT_ID:
-        return
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
 
-    try:
-        requests.get(
-            f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage",
-            params={
-                "chat_id": CHAT_ID,
-                "text": message
-            },
-            timeout=10
-        )
-    except Exception as e:
-        print("Telegram Error:", e)
+    r = requests.get(
+        url,
+        params={
+            "chat_id": CHAT_ID,
+            "text": message
+        }
+    )
+
+    print("Telegram Status:", r.status_code)
+    print("Telegram Response:", r.text)
 
 
 def get_pgrs_data():
