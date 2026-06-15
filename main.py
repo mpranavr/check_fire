@@ -14,11 +14,11 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
 # Base interval in minutes
-INTERVAL_TIME_MIN = int(os.getenv("INTERVAL_TIME_MIN", "15"))
+INTERVAL_TIME_MIN = int(os.getenv("INTERVAL_TIME_MIN", "7"))
 
 # Random delay added after each check (seconds)
 RANDOM_OFFSET_MIN = 0
-RANDOM_OFFSET_MAX = 20
+RANDOM_OFFSET_MAX = 180
 
 HEADERS = {
     "Accept": "application/json",
