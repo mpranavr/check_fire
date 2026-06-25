@@ -18,7 +18,7 @@ INTERVAL_TIME_MIN = int(os.getenv("INTERVAL_TIME_MIN", "15"))
 
 # Random delay added after each check (seconds)
 RANDOM_OFFSET_MIN = 0
-RANDOM_OFFSET_MAX = 20
+RANDOM_OFFSET_MAX = 240
 
 HEADERS = {
     "Accept": "application/json",
